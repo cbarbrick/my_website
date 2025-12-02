@@ -20,7 +20,7 @@ class HeroSection extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // LEFT SIDE — TEXT + BUTTON
+          // LEFT SIDE — TEXT + CTA BUTTON
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,18 +34,15 @@ class HeroSection extends StatelessWidget {
                     color: Colors.grey.shade900,
                   ),
                 ),
-
                 const SizedBox(height: 30),
-
                 Text(
-                  "Social-first strategies, scroll-stopping content, and\ncommunity-driven campaigns that bring real results.",
+                  "Social-first strategies, scroll-stopping content,\nand community-driven campaigns that deliver real results.",
                   style: TextStyle(
                     fontSize: 22,
                     height: 1.5,
                     color: Colors.grey.shade700,
                   ),
                 ),
-
                 const SizedBox(height: 40),
 
                 // CTA BUTTON
@@ -84,40 +81,72 @@ class HeroSection extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(width: 60),
+          const SizedBox(width: 70),
 
-          // RIGHT SIDE — NEW STATS BOX
+          // RIGHT SIDE — NEW BEAUTIFUL STATS BOX
           Expanded(
             child: Container(
-              padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 28),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
                 color: Colors.white,
+                borderRadius: BorderRadius.circular(30),
                 boxShadow: [
                   BoxShadow(
                     blurRadius: 20,
                     color: Colors.black.withOpacity(0.08),
-                    offset: const Offset(0, 10),
+                    offset: const Offset(0, 12),
                   ),
                 ],
               ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  _StatBlock(number: "200k+", label: "Campaign Views"),
-                  SizedBox(height: 24),
+              child: Row(
+                children: [
+                  // Gradient accent stripe
+                  Container(
+                    width: 10,
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          Color(0xFF8A56F0),
+                          Color(0xFFD46BD9),
+                          Color(0xFFF3876A),
+                        ],
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                      ),
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(30),
+                        bottomLeft: Radius.circular(30),
+                      ),
+                    ),
+                  ),
 
-                  Divider(thickness: 1, color: Color(0xFFEDEDED)),
-                  SizedBox(height: 24),
+                  const SizedBox(width: 30),
 
-                  _StatBlock(number: "3,000+", label: "Followers Gained"),
-                  SizedBox(height: 24),
-
-                  Divider(thickness: 1, color: Color(0xFFEDEDED)),
-                  SizedBox(height: 24),
-
-                  _StatBlock(number: "20+", label: "Collaboration Campaigns"),
+                  // Stats content
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 40,
+                        horizontal: 20,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+                          _StatBlock(number: "200k+", label: "Campaign Views"),
+                          Divider(thickness: 1, color: Color(0xFFEDEDED)),
+                          _StatBlock(
+                            number: "3,000+",
+                            label: "Followers Gained",
+                          ),
+                          Divider(thickness: 1, color: Color(0xFFEDEDED)),
+                          _StatBlock(
+                            number: "20+",
+                            label: "Collaboration Campaigns",
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -128,7 +157,7 @@ class HeroSection extends StatelessWidget {
   }
 }
 
-// Small stat widget
+// Reusable stats widget
 class _StatBlock extends StatelessWidget {
   final String number;
   final String label;
@@ -148,7 +177,7 @@ class _StatBlock extends StatelessWidget {
             color: Color(0xFF1A1A1A),
           ),
         ),
-        SizedBox(height: 6),
+        const SizedBox(height: 8),
         Text(
           label,
           style: TextStyle(fontSize: 18, color: Colors.grey.shade700),
