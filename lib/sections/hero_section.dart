@@ -84,6 +84,7 @@ class HeroSection extends StatelessWidget {
           const SizedBox(width: 70),
 
           // RIGHT SIDE — NEW BEAUTIFUL STATS BOX
+          // test
           Expanded(
             child: Container(
               decoration: BoxDecoration(
@@ -132,7 +133,10 @@ class HeroSection extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
-                          _StatBlock(number: "200k+", label: "Campaign Views"),
+                          _StatBlock(
+                            number: "9 million+",
+                            label: "Campaign Views",
+                          ),
                           Divider(thickness: 1, color: Color(0xFFEDEDED)),
                           _StatBlock(
                             number: "3,000+",
