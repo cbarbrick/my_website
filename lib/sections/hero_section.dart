@@ -123,6 +123,7 @@ class HeroSection extends StatelessWidget {
                   const SizedBox(width: 30),
 
                   // Stats content
+                  // test
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
@@ -134,7 +135,7 @@ class HeroSection extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
                           _StatBlock(
-                            number: "9 million+",
+                            number: "9,000,000+",
                             label: "Campaign Views",
                           ),
                           Divider(thickness: 1, color: Color(0xFFEDEDED)),
@@ -161,7 +162,7 @@ class HeroSection extends StatelessWidget {
   }
 }
 
-// Reusable stats widget
+// Reusable stats widget ...
 class _StatBlock extends StatelessWidget {
   final String number;
   final String label;
